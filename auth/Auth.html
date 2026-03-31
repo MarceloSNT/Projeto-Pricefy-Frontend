@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cadastro.css">
+    <title>Pricefy - Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <img src="../img/pricefy-logo.png" alt="pricefy-logo" id="logo">
+    </header>
+    <main>
+        <form id="Cadastro">
+            <label for="username">Usuário</label>
+            <input type="text" name="username" id="username">
+            <label for="email" id="email-label">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="password">
+            <button id="btn-enviar">Enviar</button>
+            <hr>
+            <p id="btn-auth" onclick="changeAuth()">login</p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy;Direitos reservados! Marcelo dos Santos Machado</p>
+    </footer>
+
+    <script src="Auth.js"></script>
+</body>
+
+</html>
