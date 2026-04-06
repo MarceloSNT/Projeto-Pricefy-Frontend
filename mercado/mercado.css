@@ -1,0 +1,143 @@
+* {
+  --AzulEscuro: #0b1c2d;
+  --VerdeEconomia: #2ecc71;
+  --Branco: #ffffff;
+  --CinzaSuave: #f4f6f8;
+  --Vermelho: #ff2c2c;
+
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  max-width: 100dvw;
+  min-height: 100dvh;
+}
+
+header {
+  max-width: 100%;
+  background-color: var(--AzulEscuro);
+}
+
+#logo-div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#logo {
+  margin: 8px 0px;
+  height: 50px;
+  align-self: center;
+}
+#btn-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#menu {
+  width: 100dvw;
+  display: none;
+  z-index: 999;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 8px;
+}
+
+#menu li {
+  list-style: none;
+  height: 30px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+#menu li:hover {
+  text-decoration: underline;
+  color: var(--VerdeEconomia);
+  transition: 0.5s;
+}
+
+#menu a {
+  height: 30px;
+  color: var(--VerdeEconomia);
+  text-decoration: none;
+}
+
+#menu-Btn {
+  width: 100%;
+  height: 30px;
+
+  border: 1px solid var(--AzulEscuro);
+  border-radius: 0px;
+  color: var(--VerdeEconomia);
+  background-color: var(--AzulEscuro);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.315);
+  transform: translate(0px, 5px);
+  cursor: pointer;
+}
+
+#home {
+  background-color: var(--VerdeEconomia);
+  min-height: 100dvh;
+  padding: 10px;
+}
+
+.mercado-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 10px;
+  margin: 3px 0px;
+  background-color: var(--AzulEscuro);
+  color: var(--CinzaSuave);
+  border-radius: 10px;
+}
+
+.btn-delete-market,
+.btn-edit-market {
+  border: none;
+  color: var(--Branco);
+  background-color: var(--AzulEscuro);
+  margin: 0px 5px;
+}
+
+.btn-save-edit {
+  display: none;
+
+  border: none;
+  color: var(--Branco);
+  background-color: var(--AzulEscuro);
+  margin: 0px 5px;
+}
+
+.btn-delete-market:hover {
+  border: none;
+  color: var(--Vermelho);
+  background-color: var(--AzulEscuro);
+  transition: 0.3s;
+}
+.btn-edit-market:hover {
+  border: none;
+  color: var(--VerdeEconomia);
+  background-color: var(--AzulEscuro);
+  transition: 0.3s;
+}
+.btn-save-edit:hover {
+  border: none;
+  color: var(--VerdeEconomia);
+  background-color: var(--AzulEscuro);
+  transition: 0.3s;
+}
+
+input {
+  background-color: #0b1c2d;
+  border: 1px solid var(--CinzaSuave);
+  color: var(--CinzaSuave);
+  border-radius: 5px;
+  padding: 5px;
+}
