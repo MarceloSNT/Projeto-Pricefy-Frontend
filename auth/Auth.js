@@ -31,7 +31,7 @@ function handleSubmit(event) {
   }
 }
 
-const urlUser = "http://localhost:8080/pricefy/user/";
+const urlUser = "https://projeto-pricefy-backend.onrender.com/pricefy/user/";
 
 function registerUser() {
   const username = document.getElementById("username").value;

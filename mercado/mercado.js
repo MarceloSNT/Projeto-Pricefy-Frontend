@@ -15,7 +15,8 @@ function logout() {
 }
 //===============================================================================
 
-const urlMarket = "http://localhost:8080/pricefy/market/";
+const urlMarket =
+  "https://projeto-pricefy-backend.onrender.com/pricefy/market/";
 //===============================================================================
 
 //LOCAL STORAGE - Token AND idUser
