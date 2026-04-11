@@ -3,6 +3,7 @@
   --VerdeEconomia: #2ecc71;
   --Branco: #ffffff;
   --CinzaSuave: #f4f6f8;
+  --Vermelho: #ff2c2c;
 
   margin: 0px;
   padding: 0px;
@@ -26,18 +27,30 @@ header {
   align-items: center;
 }
 #logo {
+  margin: 8px 0px;
   height: 50px;
   align-self: center;
 }
-
+#btn-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
 #menu {
+  width: 100dvw;
   display: none;
   z-index: 999;
   text-align: center;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 8px;
 }
 
 #menu li {
-  padding: 3px 0px;
+  list-style: none;
+  height: 30px;
+  padding-top: 10px;
   font-weight: bold;
 }
 #menu li:hover {
@@ -47,6 +60,7 @@ header {
 }
 
 #menu a {
+  height: 30px;
   color: var(--VerdeEconomia);
   text-decoration: none;
 }
@@ -70,24 +84,157 @@ header {
   padding: 10px;
 }
 
-#home-btn {
+#btn-new-product,
+#btn-new-market,
+#resetar-lista,
+#pdf-download {
   border: 2px solid var(--AzulEscuro);
   background-color: var(--VerdeEconomia);
   color: var(--AzulEscuro);
   border-radius: 5px;
-  padding: 2px 10px;
+  padding: 8px 8px;
+  margin-bottom: 5px;
+  margin-top: 20px;
 }
 
-#home-btn:hover {
+#btn-new-product:hover,
+#btn-new-market:hover,
+#resetar-lista:hover,
+#pdf-download:hover {
   border: 2px solid var(--AzulEscuro);
   background-color: var(--AzulEscuro);
   color: #2ecc71;
   cursor: pointer;
   transition: 0.5s;
 }
+
+#lista-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 15px;
+}
+.product-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 10px;
+  margin: 3px 0px;
+  background-color: var(--AzulEscuro);
+  color: var(--CinzaSuave);
+  border-radius: 10px;
+}
+
+.btn-delete-product,
+.btn-new-price {
+  border: none;
+  color: var(--Branco);
+  background-color: var(--AzulEscuro);
+  margin: 0px 5px;
+}
+.btn-delete-product:hover {
+  border: none;
+  color: var(--Vermelho);
+  background-color: var(--AzulEscuro);
+  transition: 0.3s;
+}
+.btn-new-price:hover {
+  border: none;
+  color: var(--VerdeEconomia);
+  background-color: var(--AzulEscuro);
+  transition: 0.3s;
+}
+
 footer {
   background-color: var(--AzulEscuro);
   color: var(--VerdeEconomia);
   text-align: center;
   padding: 5px 0px;
+}
+
+label {
+  font-weight: bold;
+  color: var(--CinzaSuave);
+  margin: 5px 0px 3px 0px;
+}
+
+input {
+  border: 2px solid var(--AzulEscuro);
+  border-radius: 5px;
+  margin: 0px 0px 5px 0px;
+  height: 30px;
+}
+
+#vlProduct {
+  margin-bottom: 10px;
+}
+#selectMarket {
+  border: 2px solid var(--AzulEscuro);
+  border-radius: 5px;
+  margin: 0px 0px 5px 0px;
+  height: 30px;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+.form-modal {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+#btn-modal {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-header,
+.modal-body {
+  background-color: var(--AzulEscuro);
+  color: var(--CinzaSuave);
+}
+
+.modal-title {
+  text-align: center;
+  width: 100%;
+}
+
+.btn-cancel-modal {
+  border: 2px solid var(--Vermelho);
+  background-color: var(--Vermelho);
+  color: var(--CinzaSuave);
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin: 0px 3px;
+}
+.btn-cancel-modal:hover {
+  background-color: var(--CinzaSuave);
+  color: var(--Vermelho);
+  border: 2px solid var(--CinzaSuave);
+  transition: 0.3s;
+}
+.btn-save-modal:hover {
+  background-color: var(--CinzaSuave);
+  color: var(--VerdeEconomia);
+  border: 2px solid var(--CinzaSuave);
+  transition: 0.3s;
+}
+
+.btn-save-modal {
+  border: 2px solid var(--VerdeEconomia);
+  background-color: var(--VerdeEconomia);
+  color: var(--AzulEscuro);
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin: 0px 3px;
 }

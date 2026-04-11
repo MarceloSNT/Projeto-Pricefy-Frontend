@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Pricefy - Lista de Compras</title>
 </head>
 
@@ -14,15 +16,31 @@
             <div id="logo-div"><img src="img/pricefy-logo.png" alt="Logo pricefy" id="logo"></div>
             <button onclick="menu()" id="menu-Btn"><img src="img/menu-open.png" alt=""></button>
             <ol id="menu">
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Preços</a></li>
-                <li><a href="#">Mercados</a></li>
+                <li><a href="preco/preco.html">Preços</a></li>
+                <li><a href="mercado/mercado.html">Mercados</a></li>
                 <li><a href="#">Perfil</a></li>
-                <li><a href="#">Sair</a></li>
+                <li><a href="auth/Auth.html" onclick="logout()">Sair</a></li>
             </ol>
         </header>
         <section id="home">
-            <button id="home-btn"><strong>+ Novo Produto</strong></button>
+            <nav id="btn-nav">
+                <button id="btn-new-market"><strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+                            <path
+                                d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z" />
+                        </svg> Novo Mercado</strong></button>
+                <button id="btn-new-product"><strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                        </svg> Novo Produto</strong></button>
+                <button id="resetar-lista" onclick="deleteAllProduct()"><strong><svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
+                        </svg> Esvaziar lista</strong></button>
+            </nav>
             <section id="lista-content"></section>
         </section>
     </main>
@@ -31,6 +49,79 @@
         <p>&copy;Direitos reservados! Marcelo dos Santos Machado</p>
     </footer>
 
+    <!--MODAL PRODUCT-->
+    <div class="modal" tabindex="-1" id="modalProduct">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cadastrar novo produto</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-modal">
+                        <label for="nameProduct">Nome do Produto</label>
+                        <input type="text" name="nameProduct" id="nameProduct">
+                    </form>
+                    <div id="btn-modal">
+                        <button type="button" id="btn-save-modal-product"
+                            class="btn-save-modal"><strong>Salvar</strong></button>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close" id="btn-cancel-modal-product"
+                            class="btn-cancel-modal"><strong>Cancelar</strong></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--MODAL PRICE-->
+    <div class="modal" tabindex="-1" id="modalMarket">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cadastrar novo mercado</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-modal">
+                        <label for="nameMarket">Nome do Mercado</label>
+                        <input type="text" name="nameMarket" id="nameMarket">
+                    </form>
+                    <div id="btn-modal">
+                        <button type="button" id="btn-save-modal-market"
+                            class="btn-save-modal"><strong>Salvar</strong></button>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close" id="btn-cancel-modal-market"
+                            class="btn-cancel-modal"><strong>Cancelar</strong></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="modalPrice">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cadastrar novo Preço</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-modal">
+                        <label for="vlProduct">Valor R$</label>
+                        <input type="number" name="vlProduct" id="vlProduct">
+                        <select name="selectMarket" id="selectMarket"></select>
+                    </form>
+                    <div id="btn-modal">
+                        <button type="button" id="btn-save-modal-price"
+                            class="btn-save-modal"><strong>Salvar</strong></button>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close" id="btn-cancel-modal-price"
+                            class="btn-cancel-modal"><strong>Cancelar</strong></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 
