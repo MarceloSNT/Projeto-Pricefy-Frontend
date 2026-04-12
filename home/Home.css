@@ -77,6 +77,10 @@ header {
   transform: translate(0px, 5px);
   cursor: pointer;
 }
+#menu-Btn svg {
+  height: 25px;
+  width: 50px;
+}
 
 #home {
   background-color: var(--VerdeEconomia);
