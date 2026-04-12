@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/webpage_content_reporter.js"
+  to = "/404"
+  status = 404
+
+[[headers]]
+  for = "/webpage_content_reporter.js"
+  [headers.values]
+    Content-Type = "text/plain"
+    X-Block = "reporter"
