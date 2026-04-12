@@ -116,7 +116,10 @@ function renderProducts(products) {
     listaContent.innerHTML = `<h1 style="text-align="center;">Você não possui nenhum produto cadastrado!</h1>`;
     return;
   }
+  products.sort((a, b) => a.dsName.localeCompare(b.dsName));
+
   const btnPDF = document.createElement("button");
+
   products.forEach((product) => {
     const div = document.createElement("div");
 
@@ -138,7 +141,7 @@ function renderProducts(products) {
     `;
     listaContent.appendChild(div);
   });
-  btnPDF.textContent = `Baixar PDF`;
+  btnPDF.innerHTML = `Gerar lista em PDF `;
   btnPDF.id = "pdf-download";
 
   listaContent.appendChild(btnPDF);
@@ -284,7 +287,12 @@ const avisoPriceModal = document.getElementById("modal-aviso-price");
 function createPrice() {
   const market = selectMarket.value;
   const valor = Number(document.getElementById("vlProduct").value);
-
+  if (isNaN(valor) || valor >= 0) {
+    avisoPriceModal.innerText = "Preço não pode ser 0 ou vazio!";
+    avisoPriceModal.style.fontWeight = "bold";
+    avisoPriceModal.style.color = "var(--Vermelho)";
+    return;
+  }
   const payload = {
     vlProduto: valor,
     market: market,
@@ -315,7 +323,8 @@ function createPrice() {
     .catch((error) => {
       console.log("Erro: ", error);
       avisoPriceModal.innerText = "Erro ao cadastrar preço";
-      avisoPriceModal.style.color = "red";
+      avisoPriceModal.style.fontWeight = "bold";
+      avisoPriceModal.style.color = "var(--Vermelho)";
     });
 }
 

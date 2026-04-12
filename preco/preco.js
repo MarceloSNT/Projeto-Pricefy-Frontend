@@ -65,6 +65,8 @@ function renderprice(prices) {
     return;
   }
 
+  prices.sort((a, b) => a.product.localeCompare(b.product));
+
   prices.forEach((price) => {
     const div = document.createElement("div");
 
