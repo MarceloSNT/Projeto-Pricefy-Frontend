@@ -11,7 +11,7 @@ btnLogout.addEventListener("click", logout);
 function logout() {
   localStorage.clear;
 
-  window.location.href = "auth/Auth.html";
+  window.location.href = "../index.html";
 }
 //===============================================================================
 
@@ -58,7 +58,8 @@ function renderMarket(markets) {
     div.classList.add("mercado-item");
 
     div.innerHTML = `
-    <input id="input-edit-name-${market.idMarket}" placeholder="${market.dsName}" disabled></input><span>
+    <input id="input-edit-name-${market.idMarket}" placeholder="${market.dsName}" disabled></input>
+    <span>
     <button class="btn-edit-market" data-id="${market.idMarket}">
        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -75,9 +76,9 @@ function renderMarket(markets) {
   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
   <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
 </svg>
-</svg>
 </button>
-</span>`;
+</span>
+`;
 
     sectionMarket.appendChild(div);
   });
@@ -92,12 +93,9 @@ function renderMarket(markets) {
 
       const btnSave = container.querySelector(".btn-save-edit");
 
-      btnSave.style.display = "block";
       input.disabled = false;
       input.focus();
       input.select();
-
-      container.appendChild(btnSave);
 
       btnSave.addEventListener("click", function () {
         const payload = { dsName: input.value };

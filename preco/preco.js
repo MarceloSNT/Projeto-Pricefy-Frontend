@@ -11,7 +11,7 @@ btnLogout.addEventListener("click", logout);
 function logout() {
   localStorage.clear;
 
-  window.location.href = "auth/Auth.html";
+  window.location.href = "../index.html";
 }
 //===============================================================================
 
@@ -71,7 +71,7 @@ function renderprice(prices) {
     div.classList.add("price-item");
 
     div.innerHTML = `
-    <p>Nome: ${price.product} <br> R$${price.vlProduct} <br> Mercado: ${price.market}</p>
+    <p>${price.product} <br>R$${price.vlProduct} <br>${price.market}</p>
     <span>
     <button class="btn-delete-price" data-id="${price.idPrice}">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">

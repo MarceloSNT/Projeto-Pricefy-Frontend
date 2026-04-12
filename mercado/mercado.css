@@ -107,8 +107,6 @@ header {
 }
 
 .btn-save-edit {
-  display: none;
-
   border: none;
   color: var(--Branco);
   background-color: var(--AzulEscuro);
