@@ -90,9 +90,9 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  width: 100%;
+  width: 80%;
   padding: 10px;
-  margin: 3px 0px;
+  margin: 10px auto;
   background-color: var(--AzulEscuro);
   color: var(--CinzaSuave);
   border-radius: 10px;

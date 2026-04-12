@@ -135,9 +135,18 @@ header {
 }
 
 input {
-  background-color: #0b1c2d;
-  border: 1px solid var(--CinzaSuave);
+  background-color: var(--AzulEscuro);
+  border: none;
   color: var(--CinzaSuave);
   border-radius: 5px;
   padding: 5px;
+}
+
+input:focus {
+  box-shadow: none;
+  outline: 0;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 4px solid var(--CinzaSuave);
+  transition: 0.3s;
 }
