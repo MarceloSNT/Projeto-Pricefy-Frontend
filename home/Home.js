@@ -54,7 +54,7 @@ const token = localStorage.getItem("Token");
 function logout() {
   localStorage.clear();
   sessionStorage.clear();
-  window.location.href = "auth/Auth.html";
+  window.location.href = "../index.html";
 }
 //===============================================================================
 
@@ -75,7 +75,11 @@ function createProduct() {
     body: JSON.stringify(payload),
   })
     .then((response) => response.json())
-    .then((data) => console.log("Sucesso: ", data), modalProductNew.hide())
+    .then(
+      (data) => console.log("Sucesso: ", data),
+      modalProductNew.hide(),
+      allproduct(),
+    )
     .catch((error) => console.log("Erro: ", error));
 }
 
@@ -275,6 +279,8 @@ document.addEventListener("click", (e) => {
   modalPriceNew.show();
 });
 
+const avisoPriceModal = document.getElementById("modal-aviso-price");
+
 function createPrice() {
   const market = selectMarket.value;
   const valor = Number(document.getElementById("vlProduct").value);
@@ -294,8 +300,23 @@ function createPrice() {
     body: JSON.stringify(payload),
   })
     .then((response) => response.json())
-    .then((data) => console.log("Sucesso: ", data))
-    .catch((error) => console.log("Erro: ", error));
+    .then((data) => {
+      console.log("Sucesso: ", data);
+      avisoPriceModal.innerText = "Preço cadastrado com sucesso";
+      avisoPriceModal.style.fontWeight = "bold";
+      avisoPriceModal.style.color = "var(--VerdeEconomia)";
+      document.getElementById("vlProduct").value = "";
+      setTimeout(() => {
+        avisoPriceModal.innerText = "";
+        avisoPriceModal.style.color = "";
+        avisoPriceModal.style.fontWeight = "";
+      }, 3000);
+    })
+    .catch((error) => {
+      console.log("Erro: ", error);
+      avisoPriceModal.innerText = "Erro ao cadastrar preço";
+      avisoPriceModal.style.color = "red";
+    });
 }
 
 btnSavePrice.addEventListener("click", createPrice);

@@ -162,7 +162,7 @@ function loginUser(username, password) {
       if (data.idUser) localStorage.setItem("idUser", data.idUser);
       if (data.token) localStorage.setItem("Token", data.token);
 
-      window.location.href = "../Home.html";
+      window.location.href = "../home/Home.html";
     })
     .catch((error) => {
       console.error("❌ Erro:", error);

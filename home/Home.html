@@ -13,8 +13,8 @@
 <body>
     <main>
         <header>
-            <div id="logo-div"><img src="img/pricefy-logo.png" alt="Logo pricefy" id="logo"></div>
-            <button onclick="menu()" id="menu-Btn"><img src="img/menu-open.png" alt=""></button>
+            <div id="logo-div"><img src="../img/pricefy-logo.png" alt="Logo pricefy" id="logo"></div>
+            <button onclick="menu()" id="menu-Btn"><img src="../img/menu-open.png" alt=""></button>
             <ol id="menu">
                 <li><a href="../preco/Preco.html">Preços</a></li>
                 <li><a href="../mercado/Mercado.html">Mercados</a></li>
@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <!--MODAL PRICE-->
+    <!--MODAL MARKET-->
     <div class="modal" tabindex="-1" id="modalMarket">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -95,6 +95,7 @@
         </div>
     </div>
 
+    <!--MODAL PRICE-->
     <div class="modal" tabindex="-1" id="modalPrice">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -103,6 +104,7 @@
                 </div>
                 <div class="modal-body">
                     <form class="form-modal">
+                        <p id="modal-aviso-price"></p>
                         <label for="vlProduct">Valor R$</label>
                         <input type="number" name="vlProduct" id="vlProduct">
                         <select name="selectMarket" id="selectMarket"></select>
