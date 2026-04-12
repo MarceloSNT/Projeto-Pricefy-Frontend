@@ -1,0 +1,173 @@
+* {
+  --AzulEscuro: #0b1c2d;
+  --VerdeEconomia: #2ecc71;
+  --Branco: #ffffff;
+  --CinzaSuave: #f4f6f8;
+  --Vermelho: #ff2c2c;
+
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 100%;
+  background-color: var(--AzulEscuro);
+}
+#logo {
+  height: 50px;
+  align-self: center;
+}
+
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 100dvw;
+  min-height: 90dvh;
+  padding: 15px;
+  background-color: var(--AzulEscuro);
+}
+
+#Cadastro,
+#form-usuario,
+#form-email,
+#form-password {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 70dvw;
+  background-color: var(--VerdeEconomia);
+  border: 2px solid var(--VerdeEconomia);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+label {
+  font-weight: bold;
+  color: var(--AzulEscuro);
+  transform: translate(-70px);
+  cursor: pointer;
+  font-weight: lighter;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid var(--AzulEscuro);
+  background-color: transparent !important;
+  height: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+input:focus {
+  box-shadow: none;
+  outline: 0;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 4px solid var(--AzulEscuro);
+  transition: 0.3s;
+}
+
+input:-webkit-autofill:focus {
+  border-bottom: 4px solid var(--AzulEscuro) !important;
+}
+
+#form-usuario:focus-within label,
+#form-email:focus-within label,
+#form-password:focus-within label {
+  font-weight: bold;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--AzulEscuro) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-bottom: 2px solid var(--AzulEscuro) !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+input:-moz-autofill,
+input:-moz-autofill:hover,
+input:-moz-autofill:focus,
+input:-moz-autofill:active {
+  background-color: transparent !important;
+  color: #000 !important;
+  border-bottom: 2px solid var(--AzulEscuro) !important;
+}
+
+#eye-password {
+  transform: translate(80px, -30px);
+  cursor: pointer;
+}
+
+.invalid {
+  font-weight: bold;
+  color: var(--Vermelho);
+}
+button {
+  border-radius: 5px;
+  border: 2px solid var(--AzulEscuro);
+  color: var(--AzulEscuro);
+  background-color: var(--VerdeEconomia);
+  width: 100px;
+  padding: 5px 10px;
+  font-weight: bold;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--AzulEscuro);
+  color: var(--VerdeEconomia);
+  transition: 0.5s;
+}
+hr {
+  border: 1px solid var(--AzulEscuro);
+  width: 80%;
+  margin: 10px 0px;
+}
+
+#btn-auth {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+footer {
+  background-color: var(--AzulEscuro);
+  color: var(--VerdeEconomia);
+  text-align: center;
+  padding: 5px 0px;
+}
+
+@media screen and (min-width: 500px) {
+  #Cadastro,
+  #form-usuario,
+  #form-email,
+  #form-password {
+    max-width: 25dvw;
+  }
+}

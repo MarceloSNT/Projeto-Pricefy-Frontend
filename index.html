@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Auth.css">
+    <title>Pricefy - Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/pricefy-logo.png" alt="pricefy-logo" id="logo">
+    </header>
+    <main>
+        <form id="Cadastro">
+            <div id="form-usuario">
+                <label for="username">Usuário</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div id="form-email">
+                <label for="email" id="email-label">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div id="form-password">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password"><span onclick="eyePassword()"
+                    id="eye-password"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3" />
+                    </svg></span>
+                <small id="small-password">
+                </small>
+
+            </div>
+            <button id="btn-enviar">Enviar</button>
+            <hr>
+            <span id="auth-legend">
+                Já é cadastrado?
+            </span>
+            <p id="btn-auth" onclick="changeAuth()">Login</p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy;Direitos reservados! Marcelo dos Santos Machado</p>
+    </footer>
+
+    <script src="Auth.js"></script>
+</body>
+
+</html>
